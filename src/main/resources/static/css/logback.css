@@ -1,0 +1,17 @@
+#box{
+    margin: 0px auto;
+    width: 1000px;
+    text-align: center;
+}
+
+#box table{
+    width: 100%;
+}
+
+.top{
+    background-color: #cccccc;
+}
+
+.bj{
+    background-color: #cccccc;
+}

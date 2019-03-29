@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>手机资讯</title>
+    <link rel="stylesheet" th:href="@{/css/logback.css}">
+</head>
+<body>
+<div id="box">
+<h2>手机资讯</h2>
+
+    <table>
+        <tr class="top">
+            <th>序号</th>
+            <th>标题</th>
+            <th>回复/查看</th>
+            <th>发表时间</th>
+            <th>最新回复</th>
+        </tr>
+        <tr th:each="ifmt,i :${informations}" th:class="${i.even}?'bj'">
+            <td th:text="${ifmt.id}"></td>
+            <td><a th:text="${ifmt.title}" th:href="@{/view/{id}(id=${ifmt.id})}"></a></td>
+            <td th:text="|${ifmt.replycount}/${ifmt.viewcount}|"></td>
+            <td th:text="${#dates.format(ifmt.reporttime,'yyyy-MM-dd HH:mm:ss')}"></td>
+            <td th:text="${#dates.format(ifmt.lastposttime,'yyyy-MM-dd HH:mm:ss')}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

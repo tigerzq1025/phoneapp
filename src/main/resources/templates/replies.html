@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${lofo.title}"></title>
+    <link rel="stylesheet" th:href="@{/css/logback.css}">
+    <script th:href="@{/js/jquery-1.12.4.min.js}"></script>
+    <script th:href="@{/js/view.js}"></script>
+</head>
+<body>
+<div id="box">
+<h2 th:text="${lofo.title}"></h2>
+    <p th:text="|发表于${#dates.format(lofo.reporttime,'yyyy-MM-dd HH:mm:ss')}|"></p>
+    <p th:text="${lofo.content}"></p>
+
+    <h2>读者回应</h2>
+
+    <div>
+        <p></p>
+        <p></p>
+
+    </div>
+
+</div>
+</body>
+</html>
